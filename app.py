@@ -4,7 +4,7 @@ from datetime import datetime
 from supabase import create_client
 
 # 🔑 COLE AQUI SUAS INFORMAÇÕES DO SUPABASE
-SUPABASE_URL = "COLE_SUA_URL_AQUI"
+SUPABASE_URL = "https://jyfzntwfrqqhnjwdzcey.supabase.co"
 SUPABASE_KEY = "COLE_SUA_ANON_PUBLIC_KEY_AQUI"
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
