@@ -5,7 +5,7 @@ from supabase import create_client
 
 # 🔑 COLE AQUI SUAS INFORMAÇÕES DO SUPABASE
 SUPABASE_URL = "https://jyfzntwfrqqhnjwdzcey.supabase.co"
-SUPABASE_KEY = "COLE_SUA_ANON_PUBLIC_KEY_AQUI"
+SUPABASE_KEY = https://jyfzntwfrqqhnjwdzcey.supabase.co
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
