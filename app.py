@@ -5,7 +5,7 @@ from supabase import create_client
 
 # 🔑 COLE AQUI SUAS INFORMAÇÕES DO SUPABASE
 SUPABASE_URL = "https://jyfzntwfrqqhnjwdzcey.supabase.co"
-SUPABASE_KEY = https://jyfzntwfrqqhnjwdzcey.supabase.co
+SUPABASE_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp5ZnpudHdmcnFxaG5qd2R6Y2V5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIyMTQ1MDMsImV4cCI6MjA4Nzc5MDUwM30.upU_TWa0kBTL-wnK5Yh5euJwF5VD4CcmoM4iMHaH9gI
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
