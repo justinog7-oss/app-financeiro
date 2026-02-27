@@ -20,9 +20,14 @@ with st.form("form_lancamento"):
     submitted = st.form_submit_button("Adicionar")
 
     if submitted:
-        novo = pd.DataFrame([[data, tipo, categoria, valor]],
-                            columns=["Data", "Tipo", "Categoria", "Valor"])
-        st.session_state.dados = pd.concat([st.session_state.dados, novo], ignore_index=True)
+        novo = pd.DataFrame(
+            [[data, tipo, categoria, valor]],
+            columns=["Data", "Tipo", "Categoria", "Valor"]
+        )
+        st.session_state.dados = pd.concat(
+            [st.session_state.dados, novo],
+            ignore_index=True
+        )
         st.success("Lançamento adicionado com sucesso!")
 
 st.divider()
@@ -33,8 +38,14 @@ st.dataframe(st.session_state.dados, use_container_width=True)
 
 # Resumo financeiro
 if not st.session_state.dados.empty:
-    total_receitas = st.session_state.dados[st.session_state.dados["Tipo"] == "Receita"]["Valor"].sum()
-    total_despesas = st.session_state.dados[st.session_state.dados["Tipo"] == "Despesa"]["Valor"].sum()
+    total_receitas = st.session_state.dados[
+        st.session_state.dados["Tipo"] == "Receita"
+    ]["Valor"].sum()
+
+    total_despesas = st.session_state.dados[
+        st.session_state.dados["Tipo"] == "Despesa"
+    ]["Valor"].sum()
+
     saldo = total_receitas - total_despesas
 
     st.divider()
@@ -45,5 +56,5 @@ if not st.session_state.dados.empty:
     col2.metric("Total Despesas", f"R$ {total_despesas:,.2f}")
     col3.metric("Saldo", f"R$ {saldo:,.2f}")
 
-    st.bar_chart(
-        st.session_state.dados.groupby("Categoria")["Valor"].sum()
+    grafico = st.session_state.dados.groupby("Categoria")["Valor"].sum()
+    st.bar_chart(grafico)
