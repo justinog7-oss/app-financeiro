@@ -11,11 +11,10 @@ st.title("App Financeiro - Teste de Inserção")
 
 # --- Inputs do usuário ---
 descricao = st.text_input("Descrição do gasto")
-valor = st.text_input("Valor (ex: 12.50)")
+valor = lor = st.number_input("Valor", min_value=0.0, format="%.2f")
 
 if st.button("Adicionar gasto"):
-    try:
-        valor_float = float(valor)
+    
 
         res = supabase.table("despesas").insert({
             "descricao": descricao,
